@@ -1,46 +1,31 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { ALL_COUNTRIES } from './config';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-import { Controls } from './components/Controls';
 import { Header } from './components/Header';
 import { Main } from './components/Main';
-import { List } from './components/List';
-import { Card } from './components/Card';
+
+import { HomePage } from './pages/HomePage';
+import { Details } from './pages/Details';
+import { NotFound } from './pages/NotFound';
 
 import './App.css';
 
 function App() {
 
-  const [countries, setCountries] = useState([])
-
-  useEffect(() => {
-    axios.get(ALL_COUNTRIES)
-      .then(({ data }) => setCountries(data));
-  }, []);
+  const [countries, setCountries] = useState([]);
 
   return (
     <>
       <Header />
       <Main>
-        <Controls />
-        <List>
-          {countries.map(c => {
-            const countryInfo = {
-              img: c.flags.png,
-              name: c.name,
-              info: [
-                {title: 'Population', description: c.population.toLocaleString()},
-                {title: 'Region', description: c.region},
-                {title: 'Capital', description: c.capital},
-              ]
-            };
-            
-            return (
-              <Card key={c.name} {...countryInfo}/>
-            )
-          })}
-        </List>
+        <Routes>
+          <Route path='/' element={<HomePage countries={countries} setCountries={setCountries}/>}/>
+          <Route path='/country/:name' element={<Details match/>}/>
+
+          <Route path='*' element={<Navigate to='/404'/>}/>
+          <Route path='404' element={<NotFound/>}/>
+        </Routes>
       </Main>
     </>
   );
