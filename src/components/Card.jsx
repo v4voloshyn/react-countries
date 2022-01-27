@@ -46,7 +46,7 @@ const CartListItem = styled.li`
 export const Card = ({img, name, info = [], onClick}) => {
   return (
      <Wrapper onClick={onClick}>
-       <CardImage src={img}/>
+       <CardImage src={img} alt={name}/>
        <CardBody>
          <CardTitle>{name}</CardTitle>
          <CardList>
