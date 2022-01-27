@@ -8,7 +8,7 @@ import { Card } from '../components/Card';
 import { Controls } from '../components/Controls';
 
 export const HomePage = ({ countries, setCountries }) => {
-   
+
    const [filteredCountries, setFilteredCountries] = useState(countries);
 
    const navigate = useNavigate();
@@ -34,6 +34,11 @@ export const HomePage = ({ countries, setCountries }) => {
       // eslint-disable-next-line
    }, []);
 
+   useEffect(() => {
+      handleSearch();
+      // eslint-disable-next-line
+   }, [countries]);
+
    console.log(filteredCountries);
    console.log(countries);
 
@@ -41,21 +46,23 @@ export const HomePage = ({ countries, setCountries }) => {
       <>
          <Controls onSearch={handleSearch} />
          <List>
-            {filteredCountries.map((c) => {
-               const countryInfo = {
-                  img: c.flags.png,
-                  name: c.name,
-                  info: [
-                     { title: 'Population', description: c.population.toLocaleString() },
-                     { title: 'Region', description: c.region },
-                     { title: 'Capital', description: c.capital },
-                  ]
-               };
-
-               return (
-                  <Card key={c.name} onClick={() => navigate(`/country/${c.name}`)} {...countryInfo} />
-               )
-            })}
+            {countries && (
+               filteredCountries.map((c) => {
+                  const countryInfo = {
+                     img: c.flags.png,
+                     name: c.name,
+                     info: [
+                        { title: 'Population', description: c.population.toLocaleString() },
+                        { title: 'Region', description: c.region },
+                        { title: 'Capital', description: c.capital },
+                     ]
+                  };
+   
+                  return (
+                     <Card key={c.name} onClick={() => navigate(`/country/${c.name}`)} {...countryInfo} />
+                  )
+               })
+            )}
          </List>
       </>
    );
