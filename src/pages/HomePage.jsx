@@ -39,9 +39,6 @@ export const HomePage = ({ countries, setCountries }) => {
       // eslint-disable-next-line
    }, [countries]);
 
-   console.log(filteredCountries);
-   console.log(countries);
-
    return (
       <>
          <Controls onSearch={handleSearch} />

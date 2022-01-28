@@ -11,7 +11,6 @@ export const Details = () => {
   const { name } = useParams();
 
   const [country, setCountry] = useState(null);
-  console.log(country);
 
   useEffect(() => {
       axios.get(searchByCountry(name)).then(
@@ -28,7 +27,6 @@ export const Details = () => {
   const goBack = () => {
     navigate(-1);
   }
-
 
   return <div>
     <Button onClick={goBack}>

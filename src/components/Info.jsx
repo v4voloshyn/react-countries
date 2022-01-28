@@ -101,7 +101,6 @@ export const Info = (props) => {
       languages = [],
       borders = [],
       goToCountry,
-      param
    } = props;
 
    const [neighbors, setNeighbors] = useState([]);
@@ -111,9 +110,6 @@ export const Info = (props) => {
          axios.get(filterByCode(borders)).then(({ data }) => setNeighbors(data.map(c => c.name)));
       }
    }, [borders]);
-
-   console.log(param);
-   // console.log(navigate);
 
    return (
       <Wrapper>

@@ -31,7 +31,6 @@ const ModeSwitcher = styled.div`
    color: var(--color-text);
    font-size: var(--fs-sm);
    cursor: pointer;
-   /* font-weight: var(--fw-bold); */
    line-height: var(--fs-sm);
    text-transform: capitalize;
 `;
