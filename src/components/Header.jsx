@@ -19,6 +19,7 @@ const Wrapper = styled.div`
 
 const Title = styled(Link).attrs({
    to: '/',
+   title: 'Go to Main page'
 })`
    color: var(--colors_text);
    font-size: var(--fs-sm);
@@ -49,7 +50,7 @@ export const Header = () => {
       <HeaderEl>
          <Container>
             <Wrapper>
-               <Title>Where is the world?</Title>
+               <Title>Fun with Flags!</Title>
                <ModeSwitcher onClick={toggleTheme}>
                   {theme === 'light' ? (
                      <IoMoonOutline size="14px" />
