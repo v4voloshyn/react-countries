@@ -23,6 +23,7 @@ const Input = styled.input.attrs({
    placeholder: 'Search for a country...'
 })`
    margin-left: 1.5rem;
+   width: 100px;
    border: none;
    outline: none;
    color: var(--color-text);
