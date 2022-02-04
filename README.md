@@ -26,3 +26,5 @@ Your users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode (optional)
 - Download the starter code and go through the README.md file. This will provide further details about the project. The style-guide.md file is where you'll find colors, fonts, etc.
+
+![Screenshot](https://user-images.githubusercontent.com/18702961/152562268-369786ad-7c2e-41c9-bbdf-cbb9a0edecf4.png)
