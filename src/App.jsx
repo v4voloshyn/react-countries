@@ -21,7 +21,7 @@ function App() {
       <Main>
         <Routes>
           <Route path='/' element={<HomePage countries={countries} setCountries={setCountries}/>}/>
-          <Route path='/country/:name' element={<Details match/>}/>
+          <Route path='/country/:name' element={<Details />}/>
 
           <Route path='*' element={<Navigate to='/404'/>}/>
           <Route path='404' element={<NotFound/>}/>

@@ -19,14 +19,14 @@ const InputContainer = styled.label`
 `;
 
 const Input = styled.input.attrs({
-   types: 'search',
+   type: 'search',
    placeholder: 'Search for a country...'
 })`
    margin-left: 1.5rem;
    width: 100%;
    border: none;
    outline: none;
-   color: var(--color-text);
+   color: var(--colors-text);
    background-color: var(--colors-ui-base);
 `;
 

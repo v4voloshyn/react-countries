@@ -28,7 +28,7 @@ const Title = styled(Link).attrs({
 `;
 
 const ModeSwitcher = styled.div`
-   color: var(--color-text);
+   color: var(--colors-text);
    font-size: var(--fs-sm);
    cursor: pointer;
    line-height: var(--fs-sm);
