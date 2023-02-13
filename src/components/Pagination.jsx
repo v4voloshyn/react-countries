@@ -13,7 +13,8 @@ const CustomPaginate = styled(ReactPaginate).attrs({
 	margin-top: 2rem;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
+	gap: 10px;
 	list-style-type: none;
 	padding: 0 5rem;
 	li a {
